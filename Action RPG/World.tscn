@@ -5,7 +5,7 @@
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=3]
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=5]
-[ext_resource path="res://World/Grass.png" type="Texture" id=6]
+[ext_resource path="res://World/Grass.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -580,23 +580,31 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -6
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 288, 72 )
 
-[node name="Node2D" type="Node2D" parent="YSort"]
+[node name="Grasses" type="Node2D" parent="YSort"]
 
-[node name="Grass4" type="Sprite" parent="YSort/Node2D"]
-position = Vector2( 120, 88 )
-texture = ExtResource( 6 )
+[node name="Grass" parent="YSort/Grasses" instance=ExtResource( 6 )]
+position = Vector2( 96, 64 )
 
-[node name="Grass3" type="Sprite" parent="YSort/Node2D"]
-position = Vector2( 104, 88 )
-texture = ExtResource( 6 )
+[node name="Grass2" parent="YSort/Grasses" instance=ExtResource( 6 )]
+position = Vector2( 112, 64 )
 
-[node name="Grass2" type="Sprite" parent="YSort/Node2D"]
-position = Vector2( 104, 72 )
-texture = ExtResource( 6 )
+[node name="Grass3" parent="YSort/Grasses" instance=ExtResource( 6 )]
+position = Vector2( 96, 80 )
 
-[node name="Grass" type="Sprite" parent="YSort/Node2D"]
-position = Vector2( 120, 72 )
-texture = ExtResource( 6 )
+[node name="Grass4" parent="YSort/Grasses" instance=ExtResource( 6 )]
+position = Vector2( 112, 80 )
+
+[node name="Grass5" parent="YSort/Grasses" instance=ExtResource( 6 )]
+position = Vector2( 144, 144 )
+
+[node name="Grass6" parent="YSort/Grasses" instance=ExtResource( 6 )]
+position = Vector2( 160, 144 )
+
+[node name="Grass7" parent="YSort/Grasses" instance=ExtResource( 6 )]
+position = Vector2( 144, 160 )
+
+[node name="Grass8" parent="YSort/Grasses" instance=ExtResource( 6 )]
+position = Vector2( 160, 160 )
 
 [node name="Bushes" type="YSort" parent="YSort"]
 
