@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-export var ACCELERATION = 500
+export var ACCELERATION = 700
 export var MAX_SPEED = 150
 export var ROLL_SPEED = 200
-export var FRICTION = 350
+export var FRICTION = 400
 
 enum {
 	MOVE,
@@ -13,7 +13,7 @@ enum {
 
 var state = MOVE
 var velocity = Vector2.ZERO
-var roll_vector = Vector2.DOWN
+var roll_vector = Vector2.RIGHT
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree

@@ -465,6 +465,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=8]
 resource_name = "run Down"
 length = 0.6
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -655,6 +656,7 @@ height = 24.0
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 2 )
+MAX_SPEED = 100
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -9 )
@@ -689,10 +691,10 @@ anims/RESET = SubResource( 2 )
 tree_root = SubResource( 23 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 24 )
-parameters/Attack/blend_position = Vector2( -0.00282484, -0.00862074 )
-parameters/Idle/blend_position = Vector2( 0, 0 )
-parameters/Roll/blend_position = Vector2( -0.0292044, 0.224138 )
-parameters/Run/blend_position = Vector2( 0, 0 )
+parameters/Attack/blend_position = Vector2( 1, 0 )
+parameters/Idle/blend_position = Vector2( 1, 0 )
+parameters/Roll/blend_position = Vector2( 1, 0 )
+parameters/Run/blend_position = Vector2( 1, 0 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -4 )
