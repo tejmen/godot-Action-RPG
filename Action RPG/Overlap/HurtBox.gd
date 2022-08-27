@@ -36,6 +36,3 @@ func _on_HurtBox_invinciblitiy_started():
 
 func _on_HurtBox_invinciblitiy_ended():
 	monitoring = true
-
-func _process(delta):
-	print(timer.time_left)
