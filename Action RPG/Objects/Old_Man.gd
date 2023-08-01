@@ -1,7 +1,16 @@
 extends KinematicBody2D
 
+export var ACCELERATION = 300
+export var MAX_SPEED = 75
+export var FRICTION = 200
+
+var velocity = Vector2.ZERO
+
+onready var sprite = $OldManSprite
 onready var PDZ = $PlayerDetectionZone
 onready var Textbox = $Textbox
+onready var wanderController = $WanderController
+onready var softCollisions = $SoftCollision
 
 export var ACCELERATION = 300
 export var MAX_SPEED = 75
