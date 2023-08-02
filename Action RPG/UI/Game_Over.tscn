@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/Game_Over.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://UI/Born2bSportyV10.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://UI/Born2bSportyV10.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+use_mipmaps = true
+font_data = SubResource( 3 )
+
+[node name="Game_Over" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 288, 0, 288, 185.258, 288, 224, 0, 224 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 288.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "YOU DEAD SON!"
+align = 1
+valign = 1
+
+[node name="Continue_Button" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 152.0
+margin_right = 256.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 4 )
+action_mode = 0
+text = "Continue"
+
+[node name="Quit_Button" type="Button" parent="."]
+margin_left = 32.0
+margin_top = 152.0
+margin_right = 128.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 4 )
+action_mode = 0
+text = "QUIT"
+
+[connection signal="pressed" from="Quit_Button" to="." method="_on_Quit_Button_pressed"]
