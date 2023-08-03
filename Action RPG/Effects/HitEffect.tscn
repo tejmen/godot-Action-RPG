@@ -21,6 +21,7 @@ animations = [ {
 } ]
 
 [node name="HitEffect" type="AnimatedSprite"]
+pause_mode = 2
 frames = SubResource( 3 )
 animation = "Animate"
 offset = Vector2( 0, -8 )

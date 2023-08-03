@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const PlayerHurtSound = preload("res://Player/PlayerHurtSound.tscn")
 
 export var ACCELERATION = 700
@@ -27,7 +28,7 @@ onready var hurtbox = $HurtBox
 onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 
 func _ready():
-	stats.connect("no_health", self, "queue_free")
+	stats.connect("no_health", self, "game_over")
 	animationTree.active = true
 	swordCollision.set("disabled", true)
 	swordHitbox.knockback_vector = roll_vector
@@ -99,3 +100,12 @@ func _on_HurtBox_invinciblitiy_started():
 
 func _on_HurtBox_invinciblitiy_ended():
 	blinkAnimationPlayer.play("Stop")
+
+func game_over():
+	get_tree().paused = true
+	visible = false
+	var enemyDeathEffect = EnemyDeathEffect.instance()
+	get_parent().add_child(enemyDeathEffect)
+	enemyDeathEffect.global_position = global_position
+	yield(get_tree().create_timer(0.8), "timeout")
+	get_tree().change_scene("res://UI/Game_Over.tscn")
