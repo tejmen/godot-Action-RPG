@@ -11,7 +11,6 @@ extends "res://Enemies/WanderController.gd"
 func update_target_position():
 	var target_dir = int(rand_range(0,4))
 	var target_vector = Vector2(0,0)
-	print(target_dir)
 	match target_dir: # Pick Random direction
 		0: # North
 			target_vector.y = rand_range(0,wander_range)

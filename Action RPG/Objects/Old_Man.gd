@@ -4,17 +4,8 @@ export var ACCELERATION = 300
 export var MAX_SPEED = 75
 export var FRICTION = 200
 
-var velocity = Vector2.ZERO
-
-onready var sprite = $OldManSprite
-onready var PDZ = $PlayerDetectionZone
 onready var Textbox = $Textbox
-onready var wanderController = $WanderController
-onready var softCollisions = $SoftCollision
 
-export var ACCELERATION = 300
-export var MAX_SPEED = 75
-export var FRICTION = 200
 
 enum {
 	IDLE,
@@ -77,7 +68,7 @@ func _physics_process(delta):
 		velocity += softCollisions.get_push_vector() * delta * 400
 	velocity = move_and_slide(velocity)
 
-	if PDZ.can_see_player() == true:
+	if playerDetectionZone.can_see_player() == true:
 		if Input.is_action_just_pressed("action"):
 			Textbox.queue_text("Hello my dear child, where have you come from?")
 
