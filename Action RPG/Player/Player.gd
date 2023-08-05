@@ -17,8 +17,8 @@ enum {
 var state = MOVE
 var velocity = Vector2.ZERO
 var roll_vector = Vector2.RIGHT
-var stats = PlayerStats
 
+onready var stats = get_node("/root/PlayerStats")
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")

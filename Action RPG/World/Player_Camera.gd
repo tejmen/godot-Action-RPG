@@ -24,9 +24,7 @@ func _process(delta):
 		tween.stop($".","position")
 
 func _on_Tween_tween_completed(object, key):
-	print("play")
 	get_tree().paused = false
 
 func _on_Tween_tween_started(object, key):
-	print("pAUSE")
 	get_tree().paused = true

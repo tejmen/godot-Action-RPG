@@ -1,17 +1,19 @@
 extends Node2D
 
-const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+const PlayerStats = preload("res://Player/PlayerStats.tscn")
 
-
-# Called when the node enters the scene tree for the first time.
-func _process(delta):
-	var enemyDeathEffect = EnemyDeathEffect.instance()
-	get_parent().add_child(enemyDeathEffect)
-	enemyDeathEffect.global_position = global_position
-
+func _ready():
+	print("Game Over")
 
 func _on_Quit_Button_pressed():
+	print("QUIT")
 	get_tree().quit()
+
+func _on_Continue_Button_pressed():
+	print("Continue")
+#	get_node("/root/PlayerStats").queue_free()
+#	var playerStats = PlayerStats.instance()
+#	get_node("/root").add_child(playerStats,true)
+#	get_node("/root/Stats").name = "PlayerStats"
+	get_node("/root/PlayerStats").reset()
+	get_tree().change_scene("res://World.tscn")
